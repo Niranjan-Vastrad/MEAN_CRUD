@@ -1,0 +1,42 @@
+<h3>Add or edit employee</h3>
+        <div class="row">
+        <form name="userForm">
+        <div class="col-md-6">
+        <span>Name</span>
+          <input class="form-control" name="name" ng-model="employee.name" type="text" placeholder="Name" required ng-minlength='2'>
+        </div>
+        <div class="col-md-6">
+        <span>Email</span>
+          <input class="form-control" ng-model="employee.email" type="email" placeholder="Email" >
+        </div>
+        <div class="col-md-6">
+        <span>Date of Birth</span>
+        <div class="input-group date">
+          <input type="text" class="form-control" required ng-model="employee.dob" id="dob"><span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <span>Age</span>
+          <input class="form-control" type="text"  ng-model="employee.age" placeholder="Age" readonly="true">
+        </div>
+        <div class="col-md-6">
+        <span>Department</span>
+          <input class="form-control" type="text"  ng-model="employee.department" placeholder="Department" required>
+        </div>
+        <div class="col-md-6">
+        <span>Gender</span>
+          <input class="form-control" type="text" ng-model="employee.gender" placeholder="Gender" required>
+        </div>
+        <div class="col-xs-12 col-md-3">
+        <div style="padding:12px 0;">
+        <button class="btn btn-primary btn-block" ng-click="addEmployee()" ng-disabled="userForm.$invalid || edit">Add Employee</button>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3">
+        <div style="padding:12px 0;">
+          <button class="btn btn-warning btn-block" ng-disabled="!edit" ng-click="updateEmployee(employee._id)">Update Employee</button>
+          </div>
+        </div>
+        </div>
+      </form>
+        <div>

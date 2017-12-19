@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <% include partials/head.ejs%>
+    <title>Employee MEAN</title>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Employee Directory App</h1>
+    <div ng-app="employeeApp">
+      <div ng-controller="manageEmployees">
+        <div class="container">
+        <% include partials/add&edit.ejs %>        
+        <table class="table table-bordered">
+        <thead style="color:white;background:grey;">
+          <tr>
+          <th>Name</th><th>Email</th><th>DOB</th><th>Gender</th><th>Department</th><th>Actions</th>
+          </tr>
+        </thead>
+          <tbody>
+            <tr ng-repeat="a in myapp">
+            <td>{{a.name}}</td>
+            <td>{{a.email}}</td>
+            <td>{{a.dob}}</td>
+            <td>{{a.gender}}</td>
+            <td>{{a.department}}</td>
+            <td><button class="btn btn-xs btn-danger glyphicon glyphicon-trash" ng-click="deleteEmployee(a._id)"></button>
+            <button class="btn btn-xs btn-default glyphicon glyphicon-edit"  ng-click="editEmployee(a)"></button></td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>
